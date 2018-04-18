@@ -33,7 +33,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-bar w3-black">
   <a href="<?php blink('Welcome/index')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="<?php blink('Welcome/login')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
-  <a href="<?php blink('Welcome/register')?>" class="w3-bar-item w3-button w3-mobile">Registration</a>
 </div>
 
 <link href="<?php blink('assets/css/bootstrap.css') ?>" rel="stylesheet" type="text/css">
@@ -54,6 +53,12 @@ and is wrapped around the whole page content, except for the footer in this exam
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
                         <input type="email" id="email" placeholder="Email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" placeholder="password" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
