@@ -22,9 +22,9 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('notlogin');
 	}
-	public function profil()
+	public function tampilprofil()
 	{
-		$this->load->view('profil');
+		$this->load->view('tampilprofil');
 	}
 	public function editprofil()
 	{
