@@ -60,6 +60,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-bar w3-black">
   <a href="#" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="<?php blink('Welcome/login')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
+  <a href="<?php blink('Welcome/register')?>" class="w3-bar-item w3-button w3-mobile">Registration</a>
 </div>
 
 
