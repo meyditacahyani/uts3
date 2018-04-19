@@ -47,7 +47,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">Username</label>
                     <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+                        <input type="text" id="firstName" placeholder="Username" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
