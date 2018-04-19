@@ -42,32 +42,33 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container" style="padding-top: 5%;">
-            <form class="form-horizontal" role="form">
+            <form action="<?php echo base_url(). 'Regist/tambah_aksi'; ?>" method="post" class="form-horizontal" role="form">
                 <h2>Registration Form</h2>
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">Username</label>
                     <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="Username" class="form-control" autofocus>
+                        <input type="text" name="username" id="firstName" placeholder="Username" class="form-control" autofocus>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
-                        <input type="email" id="email" placeholder="Email" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
-                    <div class="col-sm-9">
-                        <input type="password" id="password" placeholder="password" class="form-control">
+                        <input type="email" name="email" id="email" placeholder="Email" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="number" class="col-sm-3 control-label">Phone Number</label>
                     <div class="col-sm-9">
-                        <input type="number" id="number" placeholder="number" class="form-control">
+                        <input type="text" name="phone" id="number" placeholder="085xxx" class="form-control">
                     </div>
-                </div> <!-- /.form-group -->
+                </div> 
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" name="password" id="password" placeholder="xxx" class="form-control">
+                    </div>
+                </div>
+                <!-- /.form-group -->
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
