@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css')?>">
@@ -45,6 +44,7 @@
 
 </style>
 <body class="w3-light-grey">
+<link rel="stylesheet" href="<?php blink('assets/css/bootstrap.css')?>">
 
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
@@ -59,15 +59,22 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- navigation bar -->
 <div class="w3-bar w3-black">
   <a href="#" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="<?php blink('Welcome/login')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
+  <a href="<?php blink('Welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
+    <a href="<?php blink('Welcome')?>" class="w3-bar-item w3-button w3-mobile">Log Out</a>
 </div>
-
-
+    
+<div class="w3-container w3-padding-32">
+<div class="col-md-12">
+    <h4>Adiiba Dwikhanti</h4>
+    <p>Now I'm eating kfc with cilor at budi luhur jakarta. Need handsome boy to be eat with me. At 13:00 pm. please bring more money. dont forget to contact me before</p>
     <div>
-      <img class="full-width" src="<?php blink('images/k1.jpg')?>" alt="Los Angeles">
-      <h2 style=" text-align: center"><div class="centered">Jangan makan sendirian<br>Kamu gak akan kuat<br>Bareng aku aja</div></h2>
-    </div>
-
+<span class="badge">Posted 2018-04-17 10:47:04</span><div class="pull-right">
+<button class="btn btn-success btn-md"> Accept </button>
+<button class="btn btn-warning btn-md"> Decline </button>
+</div>         
+     </div>
+	 </div>
+	 </div>
 
 
 <!-- Footer -->

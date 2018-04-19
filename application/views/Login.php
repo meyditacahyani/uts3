@@ -59,7 +59,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             </br>
             <div class="wrapper">
                 <span class="group-btn" style="padding-right: 2%">     
-                    <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+                    <a href="<?php blink('Welcome/after') ?>" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
                 </span>
                 Belum punya akun? <a href="<?php blink('Welcome/register')?>" style="color: blue"> Daftar disini</a>
                 
