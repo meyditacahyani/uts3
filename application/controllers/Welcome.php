@@ -46,4 +46,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('tampilprofil');
 	}
+	public function tampilnotif()
+	{
+		$this->load->view('tampilnotif');
+	}
 }	
