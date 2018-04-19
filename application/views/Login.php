@@ -49,7 +49,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!--Pulling Awesome Font -->
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div class="container" style="padding-top: 2%; padding-left: 28%" >
+<div class="container" style="padding-top: 2%; padding-left: 28% padding-bottom:3%;" >
     <div class="row">
         <div class="col-md-6">
             <div class="form-login">
@@ -72,3 +72,11 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
     </div>
 </div>
+</div>
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  
+  <p>Ini Footer</p>
+</footer>
+
+</body>
+</html>
