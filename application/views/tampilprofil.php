@@ -121,7 +121,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                       </tr>
                     </tbody>
                   </table>
-				   <a href="#" class="btn btn-primary btn-md">Edit Profile</a>
+				   <a href="<?php blink('Welcome/editprofil')?>" class="btn btn-primary btn-md">Edit Profile</a>
                 </div>
               </div>
             </div>
