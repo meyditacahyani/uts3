@@ -1,5 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css') ?>">
+<title>Loneat</title>
 <style>
 @font-face {
     font-family: 'Raleway';

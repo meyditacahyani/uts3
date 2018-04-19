@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Loneat</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css')?>">
@@ -65,8 +65,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
     <div>
-      <img class="full-width" src="<?php blink('images/k1.jpg')?>" alt="Los Angeles">
-      <h2 style=" text-align: center"><div class="centered">Jangan makan sendirian<br>Kamu gak akan kuat<br>Bareng aku aja</div></h2>
+      <img class="full-width" src="<?php blink('images/bghome.jpg')?>" alt="Los Angeles">
+      <h2><div class="centered" style=" text-align: center; margin-top: 12%;">Jangan makan sendirian<br>Kamu gak akan kuat<br>Bareng aku aja</div></h2>
     </div>
 
 
