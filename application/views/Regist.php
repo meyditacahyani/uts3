@@ -42,7 +42,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container" style="padding-top: 5%;">
-            <form action="<?php echo base_url(). 'Regist/tambah_aksi'; ?>" method="post" class="form-horizontal" role="form">
+            <form action="<?php blink('Regist/tambah_aksi'); ?>" method="post" class="form-horizontal" role="form">
                 <h2>Registration Form</h2>
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">Username</label>
