@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<title>Loneat</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css')?>">
@@ -45,6 +44,7 @@
 
 </style>
 <body class="w3-light-grey">
+<link rel="stylesheet" href="<?php blink('assets/css/bootstrap.css')?>">
 
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
@@ -59,15 +59,62 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- navigation bar -->
 <div class="w3-bar w3-black">
   <a href="#" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="<?php blink('Welcome/login')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
+  <a href="<?php blink('Welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
+    <a href="<?php blink('Welcome')?>" class="w3-bar-item w3-button w3-mobile">Log Out</a>
 </div>
+    
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">    
 
+<div class="w3-container w3-padding-32" style="padding-left: 2%;">
+            <form class="form-horizontal" role="form">
+                <h4>Status</h4>
+	<div class="row">
+    
+		          <div class="col-md-3">
 
+      <div class="panel panel-default">
+              <div class="panel-body">
+                <input type="email" class="form-control" placeholder="What are you up to?">
+              </div>
+                <div class="panel-footer">
+                  
+                  
+                  <div class="pull-right">
+                    <button type="button" class="btn btn-success">Post</button>
+                  </div>  
+                </div>
+            </div>
+          </div>
+
+	</div>
+</div>
+</div>
+	
+<div class="w3-container" style="padding-bottom:5%;">
+<div class="col-md-12">
+    <h4>Adiiba Dwikhanti</h4>
+    <p>Now I'm eating kfc with cilor at budi luhur jakarta. Need handsome boy to be eat with me. At 13:00 pm. please bring more money. dont forget to contact me before</p>
     <div>
-      <img class="full-width" src="<?php blink('images/bghome.jpg')?>" alt="Los Angeles">
-      <h2><div class="centered" style=" text-align: center; margin-top: 12%;">Jangan makan sendirian<br>Kamu gak akan kuat<br>Bareng aku aja</div></h2>
-    </div>
-
+<span class="badge">Posted 2018-04-17 10:47:04</span><div class="pull-right">
+<button class="btn btn-success btn-md"> Accept </button>
+<button class="btn btn-warning btn-md"> Decline </button>
+</div>         
+     </div>
+	 </div>
+	 </div>
+	 
+<div class="w3-container" style="padding-bottom:5%;">
+<div class="col-md-12">
+    <h4>Widya Pram</h4>
+    <p>Now I'm eating kfc with cilor at budi luhur jakarta. Need handsome boy to be eat with me. At 13:00 pm. please bring more money. dont forget to contact me before</p>
+    <div>
+<span class="badge">Posted 2018-04-17 10:47:04</span><div class="pull-right">
+<button class="btn btn-success btn-md"> Accept </button>
+<button class="btn btn-warning btn-md"> Decline </button>
+</div>         
+     </div>
+	 </div>
+	 </div>
 
 
 <!-- Footer -->
