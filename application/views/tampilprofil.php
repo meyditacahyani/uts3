@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -60,7 +61,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 <a href="<?php blink('Welcome/after')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="<?php blink('Welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
   <a href="<?php blink('Welcome/tampilnotif')?>" class="w3-bar-item w3-button w3-mobile">Notification</a>
-    <a href="<?php blink('Welcome')?>" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+  <div class="w3-right">
+  <span class="glyphicon glyphicon-user w3-bar-item w3-button w3-mobile username username-hide-mobile">Hello <?php echo $user_name; ?></span>
+  <a href="<?php blink('Welcome')?>" class="glyphicon glyphicon-log-out w3-bar-item w3-button w3-mobile">Log Out</a>
+  </div>
 </div>
 
 
@@ -74,7 +78,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
   </head>
   <body style="background-color : white;">
-    <div class="container-fluid" style="z-index:-1;">
+    <div class="container-fluid" style="z-index:-1; margin-top: 1%">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <div class="panel panel-info">
@@ -88,37 +92,37 @@ and is wrapped around the whole page content, except for the footer in this exam
                     <tbody>
                       <tr>
                         <td>Name</td>
-                        <td>Adiiba Dwikanthi</td>
+                        <td><?php echo $nama; ?></td>
 						<td align="center" rowspan="12"><img src="<?php blink('images/fotodiba.jpg')?>" height="40%" class="img-rounded" alt="Cinque Terre">
         				        </td>
                       </tr>
                       <tr>
                         <td>Username</td>
-                        <td>ddwikanthi</td>
+                        <td><?php echo $user_name; ?></td>
                       </tr>
                       <tr>
                         <td>Birth of Date</td>
-                        <td>19-01-1997</td>
+                        <td><?php echo $tgl_lahir; ?></td>
                       </tr>
                       <tr>
                         <td>Age</td>
-                        <td>21</td>
+                        <td><?php echo $age; ?></td>
                       </tr>
                       <tr>
                         <td>Favorite Food</td>
-                        <td>Cilor (Aci Telor)</td>
+                        <td><?php echo $food; ?></td>
                       </tr>
                       <tr>
                         <td>Allergy</td>
-                        <td>Ex-Boyfriend</td>
+                        <td><?php echo $allergy; ?></td>
                       </tr>
                       <tr>
                         <td>Address</td>
-                        <td>Cipadu Street</td>
+                        <td><?php echo $alamat; ?></td>
                       </tr>
                       <tr>
                         <td>Nomor Telepon</td>
-                        <td>08xxxxxxxx</td>
+                        <td><?php echo $user_mobile; ?></td>
                       </tr>
                     </tbody>
                   </table>
@@ -126,14 +130,13 @@ and is wrapped around the whole page content, except for the footer in this exam
                 </div>
               </div>
             </div>
-            <hr>
           </div>
         </div>
       </div>
   </body>
-  <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  
-  <p>Ini Footer</p>
+  <footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
+  <p>Copyright &copy; Loneat Team 2018</p>
+  <p>Universitas Budi Luhur</p>
 </footer>
 
 </body>
