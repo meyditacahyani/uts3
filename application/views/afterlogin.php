@@ -58,70 +58,92 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- navigation bar -->
 <div class="w3-bar w3-black">
-<a href="<?php blink('Welcome/after')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="<?php blink('Welcome/after')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="<?php blink('Welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
   <a href="<?php blink('Welcome/tampilnotif')?>" class="w3-bar-item w3-button w3-mobile">Notification</a>
-    <a href="<?php blink('Welcome')?>" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+  
+  <div class="w3-right">
+  <span class="glyphicon glyphicon-user w3-bar-item w3-button w3-mobile username username-hide-mobile">Hello <?php echo $user_name; ?></span>
+  <a href="<?php blink('Welcome')?>" class="glyphicon glyphicon-log-out w3-bar-item w3-button w3-mobile">Log Out</a>
+  </div>
 </div>
     
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">    
 
 <div class="w3-container w3-padding-32" style="padding-left: 2%;">
-            <form class="form-horizontal" role="form">
+			<?php
+			$success_msg= $this->session->flashdata('success_msg');
+			if($success_msg){
+				?>
+				<div class="alert alert-success">
+				<?php echo $success_msg; ?>
+				</div>
+				<?php
+			}
+			?>
+            
+            <?php
+              $dt = new DateTime();
+            ?>
+
+            <form class="form-horizontal" role="Inserform" method="post" action="<?php echo base_url('user/update_status'); ?>">
                 <h4>Status</h4>
 	<div class="row">
     
-		          <div class="col-md-3">
+		          <div class="col-md-6">
 
       <div class="panel panel-default">
-              <div class="panel-body">
-                <input type="email" class="form-control" placeholder="What are you up to?">
-              </div>
-                <div class="panel-footer">
-                  
-                  
+	  <div class="form-group">
+		<input class="form-control" type="hidden" value="">
+	</div>
+        <input type="hidden" class="form-control" name="date" id="date" value="<?php echo $dt->format('Y-m-d H:i:s'); ?>" >
+				<input type="hidden" class="form-control" name="user_name" id="user_name" value="<?php echo $user_name; ?>" >
+              <div class="form-group">
+                <textarea type="text" class="form-control" name="status" required id="status" rows="3" placeholder="What's on your mind?"></textarea>
+              </div>	
+                <div class="panel-footer"> 
                   <div class="pull-right">
-                    <button type="button" class="btn btn-success">Post</button>
+                    <button type="submit" class="btn btn-success" >Post</button>
                   </div>  
                 </div>
             </div>
           </div>
+<!-- content -->
+
+<table class="table table-hover">
+<?php if(isset($tampilstatus)){?>
+                                                         <tbody>
+                                                         	 <?php $x = 1; ?>
+                                                         	 <?php foreach($tampilstatus as $data){ ?>
+                                                                <div class="w3-container w3-padding-32" style="padding-bottom:5%; width:100%">
+																<div class="col-md-12">
+																	<h4><?php echo $data->user_name;?></h4>
+																	<p><?php echo $data->status;?></p>
+																	<div>
+																<span class="badge">Posted <?php echo $data->date;?></span><div class="pull-right">
+																<?php if($data->user_name != $user_name ) {?>
+																<button class="btn btn-success btn-md"> Accept </button>
+																<?php } else {?>
+																<a href="<?php blink('User/deletestatus/'.$data->status_id.'')?>" class="btn btn-danger" name="btnadd" id="btnadd">Delete</a>
+																<?php } ?>
+																</div>         
+																	 </div>
+																	 </div>
+																   </div>
+                                                             <?php $x = $x+1; ?>
+                                                         </tbody>
+														 <?php } }?>
+														 </table>
+
 
 	</div>
 </div>
-</div>
-	
-<div class="w3-container" style="padding-bottom:5%;">
-<div class="col-md-12">
-    <h4>Adiiba Dwikhanti</h4>
-    <p>Now I'm eating kfc with cilor at budi luhur jakarta. Need handsome boy to be eat with me. At 13:00 pm. please bring more money. dont forget to contact me before</p>
-    <div>
-<span class="badge">Posted 2018-04-17 10:47:04</span><div class="pull-right">
-<button class="btn btn-success btn-md"> Accept </button>
-<button class="btn btn-warning btn-md"> Decline </button>
-</div>         
-     </div>
-	 </div>
-	 </div>
-	 
-<div class="w3-container" style="padding-bottom:5%;">
-<div class="col-md-12">
-    <h4>Widya Pram</h4>
-    <p>Now I'm eating kfc with cilor at budi luhur jakarta. Need handsome boy to be eat with me. At 13:00 pm. please bring more money. dont forget to contact me before</p>
-    <div>
-<span class="badge">Posted 2018-04-17 10:47:04</span><div class="pull-right">
-<button class="btn btn-success btn-md"> Accept </button>
-<button class="btn btn-warning btn-md"> Decline </button>
-</div>         
-     </div>
-	 </div>
-	 </div>
 
 
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  
-  <p>Ini Footer</p>
+<footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
+  <p>Copyright &copy; Loneat Team 2018</p>
+  <p>Universitas Budi Luhur</p>
 </footer>
 
 </body>
