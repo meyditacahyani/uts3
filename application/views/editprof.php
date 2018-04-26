@@ -42,7 +42,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 <a href="<?php blink('Welcome/after')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="<?php blink('Welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
   <a href="<?php blink('Welcome/tampilnotif')?>" class="w3-bar-item w3-button w3-mobile">Notification</a>
-    <a href="<?php blink('Welcome')?>" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+  <div class="w3-right">
+  <span class="glyphicon glyphicon-user w3-bar-item w3-button w3-mobile username username-hide-mobile">Hello <?php echo $user_name; ?></span>
+  <a href="<?php blink('Welcome')?>" class="glyphicon glyphicon-log-out w3-bar-item w3-button w3-mobile">Log Out</a>
+  </div>
 </div>
 <html lang="en">
 <head>
@@ -55,47 +58,56 @@ and is wrapped around the whole page content, except for the footer in this exam
 </head>
 <body>
 <div class="container" style="padding-top:5%" >
-<h1 style="padding-bottom:1%; padding-left:1.3%" > Profil </h1>
-    <form class="col-md-6">
-    <div class="form-group">
-      <input type="text" placeholder="Name" class="form-control" id="nama">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Username" class="form-control" id="uname">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Email"class="form-control" id="email">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Phone Number" class="form-control" id="nohp">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="ID KTP" class="form-control" id="ktp">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Address" class="form-control" id="alamat">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Birth of Date" class="form-control" id="bod">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Age" class="form-control" id="age">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Favorite Food" class="form-control" id="ff">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Allergy" class="form-control" id="aler">
-    </div>
+<h1 style="padding-bottom:1%; padding-left:1.3%" > Edit Profil </h1>
+
+<form class="col-md-6" role="form" method="post" action="<?php echo base_url('user/editprofil'); ?>">
+
+                          <fieldset>
+                              
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Name" name="nama" id="nama" type="text" required autofocus>
+                              </div>
+
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Username" name="user_name"  id="user_name" type="text" value="<?php echo $user_name; ?>"  required autofocus>
+                              </div>
+
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="ID KTP" name="id_ktp" id="id_ktp" required type="text" value="">
+                              </div>
+
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Address" name="alamat" id="alamat" required type="text" value="">
+                              </div>
+
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Birth of Date" name="tgl_lahir" id="tgl_lahir" required type="Date" value="">
+                              </div>
+                             
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Mobile Number" name="user_mobile" id="user_mobile" required type="text" value="<?php echo $user_mobile;?>">
+                              </div>
+
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="age" name="age" id="age" required type="Number" value="">
+                              </div>
+
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Favorite Food" name="food" id="food" required type="text" value="">
+                              </div>
+
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="Allergy" name="allergy" id="allergy" required type="text" value="">
+                              </div>
+                              <div class="form-actions">
+                              <input class="btn btn-lg btn-success btn-block" type="submit">
+                              </div>
+                          </fieldset>
   </form>
-  <div style="padding-left:1.3%">
-  <button method="post" class="btn btn-primary btn-md" href="<?php blink('Welcome/editprofil') ?>"> SIMPAN </button>
-  <button method="post" class="btn btn-warning btn-md" href="<?php blink('Welcome/editprofil') ?>"> BATAL </button>
-  </div>
 </div>
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  
-  <p>Ini Footer</p>
+<footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
+  <p>Copyright &copy; Loneat Team 2018</p>
+  <p>Universitas Budi Luhur</p>
 </footer>
 
 </body>
