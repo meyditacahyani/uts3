@@ -61,7 +61,10 @@ and is wrapped around the whole page content, except for the footer in this exam
   <a href="<?php blink('Welcome/after')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="<?php blink('Welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
   <a href="<?php blink('Welcome/tampilnotif')?>" class="w3-bar-item w3-button w3-mobile">Notification</a>
-    <a href="<?php blink('Welcome')?>" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+  <div class="w3-right">
+  <span class="glyphicon glyphicon-user w3-bar-item w3-button w3-mobile username username-hide-mobile">Hello <?php echo $user_name; ?></span>
+  <a href="<?php blink('Welcome')?>" class="glyphicon glyphicon-log-out w3-bar-item w3-button w3-mobile">Log Out</a>
+  </div>
 </div>
     
 	<div class="w3-container" style="padding-bottom:5%;">
@@ -85,9 +88,9 @@ and is wrapped around the whole page content, except for the footer in this exam
 	 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  
-  <p>Ini Footer</p>
+<footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
+  <p>Copyright &copy; Loneat Team 2018</p>
+  <p>Universitas Budi Luhur</p>
 </footer>
 
 </body>
