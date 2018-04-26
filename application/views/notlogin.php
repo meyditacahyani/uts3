@@ -38,9 +38,13 @@
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 20px;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    right: 50%;
+    top: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    
 }
 
 </style>
@@ -58,8 +62,9 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- navigation bar -->
 <div class="w3-bar w3-black">
+
   <a href="<?php blink('Welcome')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="<?php blink('Welcome/login')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
+  <a href="<?php blink('user/login_view')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
 </div>
 
 
@@ -70,9 +75,9 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
 
+
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  
+<footer class="w3-container w3-dark-grey w3-padding-15 w3-margin-top">
   <p>Copyright &copy; Loneat Team 2018</p>
   <p>Universitas Budi Luhur</p>
 </footer>
