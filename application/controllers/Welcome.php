@@ -18,36 +18,95 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	 public function __construct() {
+		parent::__construct();
+		$this->load->model('User_model');
+
+	}
+
 	public function index()
 	{
 		$this->load->view('notlogin');
 	}
+	
 	public function profil()
 	{
-		$this->load->view('profil');
+		$nama = $this->session->user_name;
+		$hp = $this->session->user_mobile;
+		$id = $this->session->user_id;
+		$data['user_name']=$nama;
+		$data['user_mobile']=$hp;
+		$data['user_id']=$id;
+		$this->load->view('profil',$data);
 	}
+
+	//edit 
 	public function editprofil()
 	{
-		$this->load->view('editprof');
+		$nama = $this->session->user_name;
+		$hp = $this->session->user_mobile;
+		$id = $this->session->user_id;
+		$data['user_name']=$nama;
+		$data['user_mobile']=$hp;
+		$data['user_id']=$id;
+		$this->load->view('editprof',$data);
 	}
+	
 	public function register()
 	{
 		$this->load->view('Regist');
 	}
+
 	public function login()
 	{
 		$this->load->view('Login');
 	}
+
 	public function after()
 	{
-		$this->load->view('afterlogin');
+		$allstatus = $this->User_model->getstatus();
+		$nama = $this->session->user_name;
+		$hp = $this->session->user_mobile;
+		$id = $this->session->user_id;
+		$data['user_name']=$nama;
+		$data['user_mobile']=$hp;		
+		$data['user_id']=$id;
+		$data['tampilstatus'] = $allstatus;
+		$this->load->view('afterlogin',$data);
 	}
+
 	public function tampilprofil()
 	{
-		$this->load->view('tampilprofil');
+		//$allprofil = $this->User_model->getprofil();
+		$nama = $this->session->user_name;
+		$hp = $this->session->user_mobile;
+		$id = $this->session->user_id;
+		$data['user_name']=$nama;
+		$data['user_mobile']=$hp;
+		$data['user_id']=$id;
+		$data=$this->User_model->getprofil($id);
+        $this->session->set_userdata('user_id',$data['user_id']);
+        $this->session->set_userdata('tgl_lahir',$data['tgl_lahir']);
+        $this->session->set_userdata('nama',$data['nama']);
+        $this->session->set_userdata('food',$data['food']);
+        $this->session->set_userdata('alamat',$data['alamat']);
+        $this->session->set_userdata('age',$data['age']);
+        $this->session->set_userdata('allergy',$data['allergy']);
+        $this->session->set_userdata('user_mobile',$data['user_mobile']);
+        $this->session->set_userdata('id_ktp',$data['id_ktp']);
+        
+		//$data['tampilstatus'] = $allprofil;
+		$this->load->view('tampilprofil',$data);
 	}
+
 	public function tampilnotif()
 	{
-		$this->load->view('tampilnotif');
+		$nama = $this->session->user_name;
+		$hp = $this->session->user_mobile;
+		$id = $this->session->user_id;
+		$data['user_name']=$nama;
+		$data['user_mobile']=$hp;
+		$data['user_id']=$id;
+		$this->load->view('tampilnotif',$data);
 	}
 }	
