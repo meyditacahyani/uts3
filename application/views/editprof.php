@@ -39,12 +39,12 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- navigation bar -->
 <div class="w3-bar w3-black">
-<a href="<?php blink('Welcome/after')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="<?php blink('Welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
-  <a href="<?php blink('Welcome/tampilnotif')?>" class="w3-bar-item w3-button w3-mobile">Notification</a>
+<a href="<?php blink('welcome/after')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="<?php blink('welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
+  <a href="<?php blink('welcome/tampilnotif')?>" class="w3-bar-item w3-button w3-mobile">Notification</a>
   <div class="w3-right">
   <span class="glyphicon glyphicon-user w3-bar-item w3-button w3-mobile username username-hide-mobile">Hello <?php echo $user_name; ?></span>
-  <a href="<?php blink('Welcome')?>" class="glyphicon glyphicon-log-out w3-bar-item w3-button w3-mobile">Log Out</a>
+  <a href="<?php blink('welcome')?>" class="glyphicon glyphicon-log-out w3-bar-item w3-button w3-mobile">Log Out</a>
   </div>
 </div>
 <html lang="en">

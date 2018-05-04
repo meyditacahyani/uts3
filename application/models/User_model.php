@@ -1,5 +1,5 @@
 <?php
-class User_model extends CI_model{
+class user_model extends CI_model{
 
 
 

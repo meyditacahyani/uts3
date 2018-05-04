@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class welcome extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	 public function __construct() {
 		parent::__construct();
-		$this->load->model('User_model');
+		$this->load->model('user_model');
 
 	}
 
@@ -59,12 +59,12 @@ class Welcome extends CI_Controller {
 
 	public function login()
 	{
-		$this->load->view('Login');
+		$this->load->view('login');
 	}
 
 	public function after()
 	{
-		$allstatus = $this->User_model->getstatus();
+		$allstatus = $this->user_model->getstatus();
 		$nama = $this->session->user_name;
 		$hp = $this->session->user_mobile;
 		$id = $this->session->user_id;
@@ -84,7 +84,7 @@ class Welcome extends CI_Controller {
 		$data['user_name']=$nama;
 		$data['user_mobile']=$hp;
 		$data['user_id']=$id;
-		$data=$this->User_model->getprofil($id);
+		$data=$this->user_model->getprofil($id);
         $this->session->set_userdata('user_id',$data['user_id']);
         $this->session->set_userdata('tgl_lahir',$data['tgl_lahir']);
         $this->session->set_userdata('nama',$data['nama']);

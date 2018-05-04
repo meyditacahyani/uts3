@@ -43,7 +43,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- navigation bar -->
 <div class="w3-bar w3-black">
-  <a href="<?php blink('Welcome')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="<?php blink('welcome')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="<?php blink('user/login_view')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
 </div>
 <!-- start login form -->
@@ -76,7 +76,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                   ?>
 
                 <div class="panel-body">
-                    <form role="form" method="post" action="<?php blink('User/login_user'); ?>">
+                    <form role="form" method="post" action="<?php blink('user/login_user'); ?>">
                         <fieldset>
                             <div class="form-group"  >
                                 <input class="form-control" placeholder="E-mail" name="user_email" type="email" autofocus>

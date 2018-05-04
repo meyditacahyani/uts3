@@ -1,6 +1,6 @@
 <?php
 
-class User extends CI_Controller {
+class user extends CI_Controller {
 
 public function __construct(){
 
@@ -87,7 +87,7 @@ public function EditProfil()
         $this->session->set_userdata('user_mobile',$data['user_mobile']);
         $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
         
-        redirect('Welcome/tampilprofil');
+        redirect('welcome/tampilprofil');
 }
 
 public function login_view(){
@@ -129,7 +129,7 @@ function login_user(){
 		$result = $this->user_model->deletestatus($id);
 		
 		if ($result){
-			redirect('Welcome/after');
+			redirect('welcome/after');
 		}else{
 		}
 	}
@@ -156,7 +156,7 @@ public function update_status(){
         print_r($user);
 		$this->user_model->status($user);
 		$this->session->set_flashdata('success_msg','Status has been posted');
-		redirect('Welcome/after');
+		redirect('welcome/after');
 }
 
 }

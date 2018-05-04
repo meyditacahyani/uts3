@@ -41,8 +41,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- navigation bar -->
 <div class="w3-bar w3-black">
-  <a href="<?php blink('Welcome/index')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="<?php blink('Welcome/login')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
+  <a href="<?php blink('welcome/index')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="<?php blink('welcome/login')?>" class="w3-bar-item w3-button w3-mobile">Login</a>
 </div>
 
 <link href="<?php blink('assets/css/bootstrap.css') ?>" rel="stylesheet" type="text/css">
