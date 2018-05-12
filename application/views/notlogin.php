@@ -82,5 +82,15 @@ and is wrapped around the whole page content, except for the footer in this exam
   <p>Universitas Budi Luhur</p>
 </footer>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119131810-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119131810-1');
+</script>
+
 </body>
 </html>
