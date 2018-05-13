@@ -67,17 +67,21 @@ and is wrapped around the whole page content, except for the footer in this exam
   </div>
 </div>
     
-	<div class="w3-container" style="padding-bottom:5%;">
-<div class="col-md-6">
-    <h4>Gugum Gumilar</h4>
-    <p>I accept your offer to eat together with you. You can call me at 08978768789</p>
-    <div>
-<span class="badge">Posted 2018-04-17 10:47:04</span>
-     </div>
-	 </div>
-	 </div>
-	 
-	 <div class="w3-container" style="padding-bottom:5%;">
+<!--ini notif-->
+	<div class="w3-container" style="background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); color: white;
+padding: 20px;"">
+  <div class="col-md-6">
+      <h4>Gugum Gumilar</h4>
+      <p>I accept your offer to eat together with you. You can call me at 08978768789</p>
+      <div>
+  <span class="badge">Posted 2018-04-17 10:47:04</span>
+  </div>
+	</div>
+	    </div>
+	<br>
+
+	 <div class="w3-container" style="background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); color: white;
+padding: 20px;">
 <div class="col-md-6">
     <h4>Rivaldi Pratama</h4>
     <p>I accept your offer to eat together with you. You can call me at 0897454534</p>
@@ -88,7 +92,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 	 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
+<footer class="w3-container w3-black w3-padding-30 w3-margin-top">
   <p>Copyright &copy; Loneat Team 2018</p>
   <p>Universitas Budi Luhur</p>
 </footer>

@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css')?>">
-
+<link rel="stylesheet" href="<?php blink('assets/css/bootstrap.css')?>">
 <link rel="stylesheet" href="<?php blink('assets/css/bootstrap-min.css')?>">
 <script src="<?php blink('assets/js/jquery-min.js')?>"></script>
 <script src="<?php blink('assets/js/bootstrap-min.js')?>"></script>
@@ -43,8 +43,7 @@
 }
 
 </style>
-<body class="w3-light-grey">
-<link rel="stylesheet" href="<?php blink('assets/css/bootstrap.css')?>">
+<body>
 
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
@@ -70,7 +69,8 @@ and is wrapped around the whole page content, except for the footer in this exam
     
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">    
 
-<div class="w3-container w3-padding-32" style="padding-left: 2%;">
+<div class="w3-margin-top w3-container w3-padding-32" style="background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); color: white;
+padding: 20px;">
 			<?php
 			$success_msg= $this->session->flashdata('success_msg');
 			if($success_msg){
@@ -141,7 +141,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
+<footer class="w3-container w3-padding-30 w3-margin-top" style="background: rgb(0, 0, 0); background: rgba(0, 0, 0); color: white;">
   <p>Copyright &copy; Loneat Team 2018</p>
   <p>Universitas Budi Luhur</p>
 </footer>
@@ -155,6 +155,5 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   gtag('config', 'UA-119131810-1');
 </script>
-
 </body>
 </html>

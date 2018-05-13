@@ -77,7 +77,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 
 <!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-15 w3-margin-top">
+<footer class="w3-container w3-black w3-padding-15 w3-margin-top">
   <p>Copyright &copy; Loneat Team 2018</p>
   <p>Universitas Budi Luhur</p>
 </footer>

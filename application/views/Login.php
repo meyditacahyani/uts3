@@ -1,7 +1,7 @@
 
 <!-- Include the above in your HEAD tag -->
 
-<title>Loneat</title>
+<title>LONEAT</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css')?>">
@@ -50,7 +50,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-container " >
     <div class="w3-row " style="padding:3%;">
         
-        <div class="col-sm-4" style="background: rgba(255, 255, 255, 0.7); margin: 0 auto; float: none;">
+        <div class="col-sm-4" style="padding-top:5% background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); color: white; padding: 20px; margin: 0 auto; float: none;">
             <div class="login-panel panel panel-success">
                 <div class="panel-heading">
                     <h3 class="panel-title w3-center" style="padding:3%;">Login</h3>
@@ -100,7 +100,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <!-- end login form -->
 
 
-<footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
+<footer class="w3-container w3-black w3-padding-30 w3-margin-top">
   <p>Copyright &copy; Loneat Team 2018</p>
   <p>Universitas Budi Luhur</p>
 </footer>

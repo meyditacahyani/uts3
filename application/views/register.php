@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css') ?>">
-<title>Loneat</title>
+<title>LONEAT</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -51,9 +51,11 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!------ Include the above in your HEAD tag ---------->
 
 <span style="background-color:red;">
-  <div class="w3-container"><!-- container class is used to centered  the body of the browser with some decent width-->
-      <div class="w3-row" style="padding:3%;"><!-- row class is used for grid system in Bootstrap-->
-          <div class="col-md-4 col-md-offset-4" style="background: rgba(255, 255, 255, 0.7); margin: 0 auto; float: none;"><!--col-md-4 is used to create the no of colums in the grid also use for medimum and large devices-->
+  <div class="w3-container">
+    <!-- container class is used to centered  the body of the browser with some decent width-->
+      <div class="w3-row" style="padding:3%;">
+        <!-- row class is used for grid system in Bootstrap-->
+          <div class="col-md-4 col-md-offset-4" style="padding-top:5% background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); color: white; padding: 20px; margin: 0 auto; float: none;"><!--col-md-4 is used to create the no of colums in the grid also use for medimum and large devices-->
               <div class="login-panel panel panel-success">
                   <div class="panel-heading w3-center" style="padding:3%;">
                       <h3 class="panel-title">Registration</h3>
