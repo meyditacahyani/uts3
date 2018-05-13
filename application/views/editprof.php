@@ -65,40 +65,50 @@ and is wrapped around the whole page content, except for the footer in this exam
                           <fieldset>
                               
                               <div class="form-group">
+                              <label>Full Name</label>
                                   <input class="form-control" placeholder="Name" name="nama" id="nama" type="text" required autofocus>
                               </div>
 
                               <div class="form-group">
+                              <label>Username</label>
                                   <input class="form-control" placeholder="Username" name="user_name"  id="user_name" type="text" value="<?php echo $user_name; ?>"  required autofocus>
                               </div>
 
                               <div class="form-group">
+                              <label>Id KTP</label>
                                   <input class="form-control" placeholder="ID KTP" name="id_ktp" id="id_ktp" required type="text" value="">
                               </div>
 
                               <div class="form-group">
+                              <label>Address</label>
                                   <input class="form-control" placeholder="Address" name="alamat" id="alamat" required type="text" value="">
                               </div>
 
                               <div class="form-group">
+                              <label>Birth of Date</label>
                                   <input class="form-control" placeholder="Birth of Date" name="tgl_lahir" id="tgl_lahir" required type="Date" value="">
                               </div>
                              
                               <div class="form-group">
+                              <label>Mobile Number</label>
                                   <input class="form-control" placeholder="Mobile Number" name="user_mobile" id="user_mobile" required type="text" value="<?php echo $user_mobile;?>">
                               </div>
 
                               <div class="form-group">
+                              <label>Age</label>
                                   <input class="form-control" placeholder="age" name="age" id="age" required type="Number" value="">
                               </div>
 
                               <div class="form-group">
+                              <label>Favorite Food</label>
                                   <input class="form-control" placeholder="Favorite Food" name="food" id="food" required type="text" value="">
                               </div>
 
                               <div class="form-group">
+                              <label>Allergy</label>
                                   <input class="form-control" placeholder="Allergy" name="allergy" id="allergy" required type="text" value="">
                               </div>
+                              
                               <div class="form-actions">
                               <input class="btn btn-lg btn-success btn-block" type="submit">
                               </div>

@@ -30,7 +30,7 @@ $email_check=$this->user_model->email_check($user['user_email'],$user['user_name
 
 if($email_check){
   $this->user_model->register_user($user);
-  $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
+  $this->session->set_flashdata('success_msg', 'Registered successfully. Dont forget to Edit your profile after login.');
   redirect('user/login_view');
 
 }
@@ -51,6 +51,7 @@ if($email_check){
     $data['menu'] = $menu;
     $this->load->view('EditBuku',$data);
   }
+  
 
 //edit data
 public function EditProfil()
@@ -85,7 +86,7 @@ public function EditProfil()
         $this->session->set_userdata('user_email',$data['user_email']);
         $this->session->set_userdata('user_name',$data['user_name']);
         $this->session->set_userdata('user_mobile',$data['user_mobile']);
-        $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
+        $this->session->set_flashdata('success_msg', 'Registered successfully. ');
         
         redirect('welcome/tampilprofil');
 }
@@ -132,7 +133,19 @@ function login_user(){
 			redirect('welcome/after');
 		}else{
 		}
-	}
+  }
+  
+  public function acc($id2){
+    $result = $this->user_model->getstatus1($id2);
+    $nama = $this->session->user_name;
+		$hp = $this->session->user_mobile;
+    $id = $this->session->user_id;
+		$data['user_name']=$nama;
+		$data['user_mobile']=$hp;		
+    $data['user_id']=$id;
+    $data['tampilstatus'] = $result;
+			$this->load->view("Impress.php",$data);
+  }
 
 function user_profile(){
 $this->load->view('user_profile.php');
@@ -148,6 +161,7 @@ public function update_status(){
 
       $user=array(
       'user_name'=>$this->input->post('user_name'),
+      'user_id' => $this->input->post('user_id'),
       'status'=>$this->input->post('status'),
       'date'=>$this->input->post('date')
       //'user_password'=>md5($this->input->post('user_password')),
@@ -157,6 +171,21 @@ public function update_status(){
 		$this->user_model->status($user);
 		$this->session->set_flashdata('success_msg','Status has been posted');
 		redirect('welcome/after');
+}
+//save ke db
+public function acceptstatus(){
+  $user=array(
+    'username_kita'=>$this->input->post('username_kita'),
+    'username_orang'=> $this->input->post('username_orang'),
+    'status_id' => $this->input->post('status_id'),
+    'acc'=>$this->input->post('acc'),
+    'date'=>$this->input->post('date')
+    
+
+  );
+  print_r($user);
+  $this->user_model->accept($user);
+  redirect('welcome/after');
 }
 
 }

@@ -50,7 +50,11 @@ $this->db->insert('status', $user);
 
 		return $checkupdate;
 
-	}
+  }
+  
+public function accept($user){
+  $this->db->insert('notif', $user);
+}
 
 public function getprofil($id){
     $this->db->select('*');
@@ -65,7 +69,19 @@ public function getstatus(){
 		$this->db->order_by('status_id','desc');
 		$result = $this->db->get('status');
 		return $result->result();
-	}
+  }
+  
+  public function getstatus1($id2){
+	
+		$result = $this->db->query("select * from status where status_id='$id2'");
+		return $result->result();
+  }
+  
+  public function getnotif($nama){
+    $result = $this->db->query("select * from notif where username_orang='$nama'");
+    return $result->result();
+
+  }
 
 public function login_user($email,$pass){
 

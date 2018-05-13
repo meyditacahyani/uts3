@@ -5,8 +5,7 @@
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css')?>">
 
 <link rel="stylesheet" href="<?php blink('assets/css/bootstrap-min.css')?>">
-<script src="<?php blink('assets/js/jquery-min.js')?>"></script>
-<script src="<?php blink('assets/js/bootstrap-min.js')?>"></script>
+
 <style>
 @font-face {
     font-family: 'Raleway';
@@ -42,6 +41,8 @@
     transform: translate(-50%);
 }
 
+
+
 </style>
 <body class="w3-light-grey">
 <link rel="stylesheet" href="<?php blink('assets/css/bootstrap.css')?>">
@@ -57,40 +58,45 @@ and is wrapped around the whole page content, except for the footer in this exam
 </header>
 
 <!-- navigation bar -->
-<div class="w3-bar w3-black" style="margin-bottom:2%;">
+<div class="w3-bar w3-black">
   <a href="<?php blink('welcome/after')?>" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="<?php blink('welcome/tampilprofil')?>" class="w3-bar-item w3-button w3-mobile">Profil</a>
   <a href="<?php blink('welcome/tampilnotif')?>" class="w3-bar-item w3-button w3-mobile">Notification</a>
+  
   <div class="w3-right">
   <span class="glyphicon glyphicon-user w3-bar-item w3-button w3-mobile username username-hide-mobile">Hello <?php echo $user_name; ?></span>
   <a href="<?php blink('welcome')?>" class="glyphicon glyphicon-log-out w3-bar-item w3-button w3-mobile">Log Out</a>
   </div>
 </div>
 
+<div class="w3-container w3-padding-32" style="padding-left: 2%;">
+            <?php
+              $dt = new DateTime();
+            ?>
 
-<?php foreach($tampilnotif as $data){ 
-  /*
-  buat cek foreach jalan apa nggak
-  <?php if(isset($tampilnotif)){?>
-  tampil
-  <?php } else {?>
-  ga nampil
-  <?php } ?>
-  */
-  ?>
-	<div class="w3-container" style="padding-bottom:5%;">
-<div class="col-md-6">
-    <h4><?php echo $data->username_kita;?></h4>
-    <p><?php echo $data->acc;?></p>
-    <div>
-<span class="badge">Accept At <?php echo $data->date;?></span>
-     </div>
-	 </div>
-	 </div>
-<?php } ?>
-	 
+<form class="col-md-6" role="form" method="post" action="<?php echo base_url('user/acceptstatus'); ?>">
 
-<!-- Footer -->
+                          <fieldset>
+                              
+                              <div class="form-group">
+                              <label class="w3-center"><h2>Impression</h2></label>
+                              <input type="hidden" class="form-control" name="username_kita" id="username_kita" value="<?php echo $user_name; ?>" >
+                              <?php foreach($tampilstatus as $data){ ?>
+                                <input type="hidden" class="form-control" name="status_id" id="status_id" value="<?php echo $data->status_id; ?>" >
+                                <input type="hidden" class="form-control" name="username_orang" id="username_orang" value="<?php echo $data->user_name; ?>" >
+                              
+                              <?php } ?>
+                                  <input class="form-control" placeholder="" name="acc" id="acc" type="text" required autofocus>
+                                  <input type="hidden" class="form-control" name="date" id="date" value="<?php echo $dt->format('Y-m-d H:i:s'); ?>" >
+                              </div>
+                              
+                              <div class="form-actions">
+                              <button class="btn btn-success" type="submit" >Accept </button>
+                              </div>
+                          </fieldset>
+  </form>
+
+  <!-- Footer -->
 <footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
   <p>Copyright &copy; Loneat Team 2018</p>
   <p>Universitas Budi Luhur</p>
@@ -105,6 +111,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   gtag('config', 'UA-119131810-1');
 </script>
+</div>
 
 </body>
 </html>

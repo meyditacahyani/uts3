@@ -5,8 +5,7 @@
 <link rel="stylesheet" href="<?php blink('assets/css/w3.css')?>">
 
 <link rel="stylesheet" href="<?php blink('assets/css/bootstrap-min.css')?>">
-<script src="<?php blink('assets/js/jquery-min.js')?>"></script>
-<script src="<?php blink('assets/js/bootstrap-min.js')?>"></script>
+
 <style>
 @font-face {
     font-family: 'Raleway';
@@ -41,6 +40,8 @@
     left: 50%;
     transform: translate(-50%);
 }
+
+
 
 </style>
 <body class="w3-light-grey">
@@ -97,6 +98,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 		<input class="form-control" type="hidden" value="">
 	</div>
         <input type="hidden" class="form-control" name="date" id="date" value="<?php echo $dt->format('Y-m-d H:i:s'); ?>" >
+        <input type="hidden" class="form-control" name="user_id" id="user_id" value="<?php echo $user_id; ?>" >
 				<input type="hidden" class="form-control" name="user_name" id="user_name" value="<?php echo $user_name; ?>" >
               <div class="form-group">
                 <textarea type="text" class="form-control" name="status" required id="status" rows="3" placeholder="What's on your mind?"></textarea>
@@ -108,10 +110,11 @@ and is wrapped around the whole page content, except for the footer in this exam
                 </div>
             </div>
           </div>
+          </div>
 <!-- content -->
 
 <table class="table table-hover">
-<?php if(isset($tampilstatus)){?>
+                              <?php if(isset($tampilstatus)){?>
                                                          <tbody>
                                                          	 <?php $x = 1; ?>
                                                          	 <?php foreach($tampilstatus as $data){ ?>
@@ -122,9 +125,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 																	<div>
 																<span class="badge">Posted <?php echo $data->date;?></span><div class="pull-right">
 																<?php if($data->user_name != $user_name ) {?>
-																<button class="btn btn-success btn-md"> Accept </button>
+                                  <a href="<?php blink('user/acc/'.$data->status_id.'')?>" class="btn btn-success">Accept </a>
+                          
 																<?php } else {?>
-																<a href="<?php blink('user/deletestatus/'.$data->status_id.'')?>" class="btn btn-danger" name="btnadd" id="btnadd">Delete</a>
+																<a href="<?php blink('user/deletestatus/'.$data->status_id.'')?>" class="btn btn-danger">Delete</a>
 																<?php } ?>
 																</div>         
 																	 </div>
@@ -133,12 +137,13 @@ and is wrapped around the whole page content, except for the footer in this exam
                                                              <?php $x = $x+1; ?>
                                                          </tbody>
 														 <?php } }?>
-														 </table>
+</table>
 
 
-	</div>
-</div>
+</div><!--end of content-->
 
+<script src="<?php blink('assets/js/jquery-min.js')?>" type="text/javascript"></script>
+<script src="<?php blink('assets/js/bootstrap-min.js')?>" type="text/javascript"></script>
 
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey w3-padding-30 w3-margin-top">
