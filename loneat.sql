@@ -1,7 +1,29 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.31-MariaDB)
-# Date: 2018-05-03 10:48:36
+# Date: 2018-05-13 23:52:23
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
+
+#
+# Structure for table "notif"
+#
+
+DROP TABLE IF EXISTS `notif`;
+CREATE TABLE `notif` (
+  `notif_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username_kita` varchar(255) DEFAULT NULL,
+  `username_orang` varchar(255) DEFAULT NULL,
+  `status_id` varchar(255) DEFAULT NULL,
+  `acc` varchar(255) DEFAULT NULL,
+  `status` int(11) DEFAULT '0',
+  `date` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`notif_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+#
+# Data for table "notif"
+#
+
+INSERT INTO `notif` VALUES (5,'andara','ratna','33','Aku terima tawaran anda',0,'2018-05-13 17:02:16'),(6,'valdy','ratna','33','Jangan kfc dah, gimana kalo mcd?',0,'2018-05-13 17:02:32'),(7,'denah','andara','35','Coba notif',0,'2018-05-13 17:09:59');
 
 #
 # Structure for table "status"
@@ -10,17 +32,18 @@
 DROP TABLE IF EXISTS `status`;
 CREATE TABLE `status` (
   `status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
   `user_name` varchar(50) DEFAULT NULL,
   `date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`status_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "status"
 #
 
-INSERT INTO `status` VALUES (9,'sa','ana',NULL),(19,'ini siapa','val','2018-04-25 16:59:22'),(20,'asasasa','zaid','2018-04-26 04:06:24'),(23,'wqweq','','2018-04-26 04:21:05'),(25,'see','ddwikanthi','2018-04-26 19:02:46');
+INSERT INTO `status` VALUES (33,'8','He go away from me. and i am stuck now, at kfc alone. ','ratna','2018-05-13 16:56:55'),(34,'5','We love things that name MIE','valdy','2018-05-13 17:02:59'),(35,'7','All of the best things is rain + indomie kari ayam','andara','2018-05-13 17:07:33'),(36,'9','I am lost here. need someone that can bring me to the right way','denah','2018-05-13 17:09:05');
 
 #
 # Structure for table "user"
@@ -41,10 +64,10 @@ CREATE TABLE `user` (
   `allergy` varchar(255) DEFAULT NULL,
   `id_ktp` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (1,'Ehtesham','ehtesham@gmail.com','123','334443333',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'Ehtesham','ehtesham@gmail.com','123','2147483647',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,'a','b@b','123','232342343',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'zaid','a@a','202cb962ac59075b964b07152d234b70','324234234',NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'ddwikanthi','v@v','9e3669d19b675bd57058fd4664205d2a','089657340219','1997-06-04','Adiiba Dwikanthi','Indomie','Jl. Timbul Rt.04/08 No.101 Kreo Selatan Larangan Tangerang Banten 15156',20,'Indomie','1234567891011213');
+INSERT INTO `user` VALUES (5,'valdy','v@v','9e3669d19b675bd57058fd4664205d2a','089657340219','2018-05-25','valdy','mie','jakarta',12,'nyamuk','123'),(7,'andara','a@a','0cc175b9c0f1b6a831c399e269772661','07287232','2018-04-05','Andara Debian','Fish','Jl. Sendiri',20,'Sushi','897987'),(8,'ratna','r@r','4b43b0aee35624cd95b910189b3dc231','0892382983','2018-03-16','Ratna Ayu Aulia','Ice Cream','Jl. Berdua',20,'Peanuts','089838434'),(9,'denah','d@d','8277e0910d750195b448797616e091ad','08323823',NULL,NULL,NULL,NULL,NULL,NULL,NULL);

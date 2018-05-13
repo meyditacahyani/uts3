@@ -51,16 +51,6 @@ class welcome extends CI_Controller {
 		$data['user_id']=$id;
 		$this->load->view('editprof',$data);
 	}
-	
-	public function register()
-	{
-		$this->load->view('Regist');
-	}
-
-	public function login()
-	{
-		$this->load->view('login');
-	}
 
 	public function after()
 	{
@@ -104,9 +94,11 @@ class welcome extends CI_Controller {
 		$nama = $this->session->user_name;
 		$hp = $this->session->user_mobile;
 		$id = $this->session->user_id;
+		$result = $this->user_model->getnotif($nama);
 		$data['user_name']=$nama;
 		$data['user_mobile']=$hp;
 		$data['user_id']=$id;
+		$data['tampilnotif']=$result;
 		$this->load->view('tampilnotif',$data);
 	}
 }	
