@@ -80,21 +80,33 @@ and is wrapped around the whole page content, except for the footer in this exam
   <body>
     <center>
       <div class="container-fluid" style="z-index:-1; margin-top: 1%">
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-sm-6 col-sm-offset-2">
             <div class="panel panel-info">
               <div class="panel-heading" >
                 <span class="glyphicon glyphicon-user" style="font-size:12px; color:Green"></span></div>
                 <div class="card card-body" style="padding-top:5% background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); color: white; padding: 20px; ">
                   <div class="panel-body">
   					<h2>My Profile</h2>
+            <table class="table">
+            <?php if(isset($picture)){?>
+                  <thead>
+                  <tr>
+                    <td align="center" rowspan="8"><img src="<?php blink();?>images/picture/<?php echo $picture; ?>" height="120px" 
+                    width="120px" class="img-rounded" alt="Profile Picture"></td>
+                  </tr>
+                  </thead>
+            <?php } ?>
+              <tbody>
+              <tr>
+                <td align="center"><a type="file" href="<?php blink('welcome/editprofil/')?>" class="btn btn-primary btn-md">Edit Profile</a></td>
+              </tr>
+              </tbody>
+            </table>
                     <table class="table" >
                       <tbody>
                         <tr>
                           <td>Name</td>
                           <td><?php echo $nama; ?></td>
-                          <td>Foto Profil</td>
-  						<td align="center" rowspan="12"><img src="<?php blink('images/fotodiba.jpg')?>" height="40%" class="img-rounded" alt="Cinque Terre">
-          				        </td>
                         </tr>
                         <tr>
                           <td>Username</td>
@@ -126,7 +138,6 @@ and is wrapped around the whole page content, except for the footer in this exam
                         </tr>
                       </tbody>
                     </table>
-  				   <a href="<?php blink('welcome/editprofil')?>" class="btn btn-primary btn-md">Edit Profile</a>
                   </div>
                 </div>
               </div>

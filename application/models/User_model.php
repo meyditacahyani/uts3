@@ -76,6 +76,12 @@ public function getstatus(){
 		$result = $this->db->query("select * from status where status_id='$id2'");
 		return $result->result();
   }
+
+  public function getuser1($id){
+	
+		$result = $this->db->query("select * from user where user_id='$id'");
+		return $result->result();
+  }
   
   public function getnotif($nama){
     $result = $this->db->query("select * from notif where username_orang='$nama'");
