@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.5.5-10.1.31-MariaDB)
-# Date: 2018-05-13 23:52:23
+# Date: 2018-05-14 19:44:22
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
 
@@ -17,7 +17,7 @@ CREATE TABLE `notif` (
   `status` int(11) DEFAULT '0',
   `date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`notif_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "notif"
@@ -63,11 +63,12 @@ CREATE TABLE `user` (
   `age` int(3) DEFAULT NULL,
   `allergy` varchar(255) DEFAULT NULL,
   `id_ktp` varchar(255) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT 'pp0.jpg',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "user"
 #
 
-INSERT INTO `user` VALUES (5,'valdy','v@v','9e3669d19b675bd57058fd4664205d2a','089657340219','2018-05-25','valdy','mie','jakarta',12,'nyamuk','123'),(7,'andara','a@a','0cc175b9c0f1b6a831c399e269772661','07287232','2018-04-05','Andara Debian','Fish','Jl. Sendiri',20,'Sushi','897987'),(8,'ratna','r@r','4b43b0aee35624cd95b910189b3dc231','0892382983','2018-03-16','Ratna Ayu Aulia','Ice Cream','Jl. Berdua',20,'Peanuts','089838434'),(9,'denah','d@d','8277e0910d750195b448797616e091ad','08323823',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES (5,'valdy','v@v','9e3669d19b675bd57058fd4664205d2a','089657340219','2018-05-25','valdy pratama','mie','jakarta',12,'nyamuk','123','Batik-Indonesia-91.jpg'),(7,'andara','a@a','0cc175b9c0f1b6a831c399e269772661','07287232','2018-04-05','Andara Debian','Fish','Jl. Sendiri',20,'Sushi','897987','pp1.jpg'),(8,'ratna','r@r','4b43b0aee35624cd95b910189b3dc231','0892382983','2018-03-16','Ratna Ayu Aulia','Ice Cream','Jl. Berdua',20,'Peanuts','089838434','pp0.jpg'),(9,'denah','d@d','8277e0910d750195b448797616e091ad','08323823',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'pp0.jpg'),(10,'peak','p@p','83878c91171338902e0fe0fb97a8c47a','0832332443',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'pp0.jpg');
