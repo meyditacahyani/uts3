@@ -66,8 +66,8 @@ public function getprofil($id){
 
 public function getstatus(){
 	
-		$this->db->order_by('status_id','desc');
-		$result = $this->db->get('status');
+    $result = $this->db->query("select a.status_id, status, a.user_name, date, picture 
+    from status a, user b where a.user_name=b.user_name order by status_id desc");
 		return $result->result();
   }
   

@@ -101,7 +101,7 @@ padding: 20px;">
         <input type="hidden" class="form-control" name="user_id" id="user_id" value="<?php echo $user_id; ?>" >
 				<input type="hidden" class="form-control" name="user_name" id="user_name" value="<?php echo $user_name; ?>" >
               <div class="form-group">
-                <textarea type="text" class="form-control" name="status" required id="status" rows="3" placeholder="What's on your mind?"></textarea>
+                <textarea type="text" class="form-control" name="status" required maxlength="100" id="status" rows="3" placeholder="What's on your mind?"></textarea>
               </div>	
                 <div class="panel-footer"> 
                   <div class="pull-right">
@@ -118,22 +118,38 @@ padding: 20px;">
                                                          <tbody>
                                                          	 <?php $x = 1; ?>
                                                          	 <?php foreach($tampilstatus as $data){ ?>
-                                                                <div class="w3-container w3-padding-32" style="padding-bottom:5%; width:100%">
-																<div class="col-md-12">
-																	<h4><?php echo $data->user_name;?></h4>
-																	<p><?php echo $data->status;?></p>
-																	<div>
-																<span class="badge">Posted <?php echo $data->date;?></span><div class="pull-right">
-																<?php if($data->user_name != $user_name ) {?>
-                                  <a href="<?php blink('user/acc/'.$data->status_id.'')?>" class="btn btn-success">Accept </a>
-                          
-																<?php } else {?>
-																<a href="<?php blink('user/deletestatus/'.$data->status_id.'')?>" class="btn btn-danger">Delete</a>
-																<?php } ?>
-																</div>         
-																	 </div>
-																	 </div>
-																   </div>
+                                <div class="w3-container w3-padding-32" style="padding-bottom:5%; width:100%">
+                                    <div class="col-md-12">
+                                      <div class="row">
+                                        <div class="column" style="padding:3%;">
+                                        <img src="<?php blink();?>images/picture/<?php echo $data->picture; ?>" height="80px" 
+                                          width="80px" style="border-radius: 50%; margin-top:10px" class="img-rounded" alt="Profile Picture">
+                                        </div>
+                                            <div class="column" style="padding-left:auto; max-width:1900px; min-width:500px;">
+                                              <div class="row">
+                                                  <h4><?php echo $data->user_name;?></h4>
+                                              </div>
+                                              <div class="row">
+                                                  <p><?php echo $data->status;?></p>
+                                              </div>
+                                            
+                                                            <div class="row">
+                                                                <span class="badge">Posted <?php echo $data->date;?></span>
+                                                            </div>
+                                              </div>  
+                                              <div class="column" style="margin-top:25px; margin-left:auto;">
+                                                  <div class="pull-right">
+                                                                    <?php if($data->user_name != $user_name ) {?>
+                                                                      <a href="<?php blink('user/acc/'.$data->status_id.'')?>" class="btn btn-success">Accept </a>
+                                                              
+                                                                    <?php } else {?>
+                                                                    <a href="<?php blink('user/deletestatus/'.$data->status_id.'')?>" class="btn btn-danger">Delete</a>
+                                                                    <?php } ?>
+                                                  </div>
+                                              </div>              
+                                        </div>                        
+                                      </div>
+																  </div>
                                                              <?php $x = $x+1; ?>
                                                          </tbody>
 														 <?php } }?>
