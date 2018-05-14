@@ -66,14 +66,20 @@ public function getprofil($id){
 
 public function getstatus(){
 	
-		$this->db->order_by('status_id','desc');
-		$result = $this->db->get('status');
+    $result = $this->db->query("select a.status_id, status, a.user_name, date, picture 
+    from status a, user b where a.user_name=b.user_name order by status_id desc");
 		return $result->result();
   }
   
   public function getstatus1($id2){
 	
 		$result = $this->db->query("select * from status where status_id='$id2'");
+		return $result->result();
+  }
+
+  public function getuser1($id){
+	
+		$result = $this->db->query("select * from user where user_id='$id'");
 		return $result->result();
   }
   

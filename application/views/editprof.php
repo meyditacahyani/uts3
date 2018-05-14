@@ -60,14 +60,66 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <body>
 <center>
-<div class="col-md-6 w3-margin-top" style="padding-top:5% background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); color: white; padding: 20px;">
-<h1 style="padding-bottom:1%; padding-left:1.3%" > Edit Profil </h1>
+<div align="left" class="card card-body col-md-6 w3-margin-top" style="padding-top:5% background: rgb(0, 0, 0); background: rgba(0, 0, 0, 0.7); color: white; padding: 20px;">
+<h1 align="center" style="padding-bottom:1%; padding-left:1.3%" > Edit Profil </h1>
 
-<form class="" role="form" method="post" action="<?php echo base_url('User/editprofil'); ?>">
-            
+<form role="form" method="post" action="<?php echo base_url('User/editprofil'); ?>" enctype="multipart/form-data" >
+<?php if(isset($puser)){?>
+                            <?php foreach($puser as $data){ ?>
                               <div class="form-group">
                               <label>Full Name</label>
-                                  <input class="form-control" placeholder="Name" name="nama" id="nama" type="text" required autofocus>
+                                  <input class="form-control" placeholder="Name" name="nama" id="nama" type="text" value="<?php echo $data->nama; ?>" required autofocus>
+                              </div>
+
+                              <div class="form-group">
+                              <label>Username</label>
+                                  <input class="form-control" placeholder="Username" name="user_name"  id="user_name" type="text" value="<?php echo $user_name; ?>"  required autofocus>
+                              </div>
+
+                              <div class="form-group">
+                              <label>Id KTP</label>
+                                  <input class="form-control" placeholder="ID KTP" name="id_ktp" id="id_ktp" required type="text" value="<?php echo $data->id_ktp; ?>">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Address</label>
+                                  <input class="form-control" placeholder="Address" name="alamat" id="alamat" required type="text" value="<?php echo $data->alamat; ?>">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Birth of Date</label>
+                                  <input class="form-control" placeholder="Birth of Date" name="tgl_lahir" id="tgl_lahir" required type="Date" value="<?php echo $data->tgl_lahir; ?>">
+                              </div>
+                             
+                              <div class="form-group">
+                              <label>Mobile Number</label>
+                                  <input class="form-control" placeholder="Mobile Number" name="user_mobile" id="user_mobile" required type="text" value="<?php echo $user_mobile;?>">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Age</label>
+                                  <input class="form-control" placeholder="age" name="age" id="age" required type="Number" value="<?php echo $data->age; ?>">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Favorite Food</label>
+                                  <input class="form-control" placeholder="Favorite Food" name="food" id="food" required type="text" value="<?php echo $data->food; ?>">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Allergy</label>
+                                  <input class="form-control" placeholder="Allergy" name="allergy" id="allergy" required type="text" value="<?php echo $data->allergy; ?>">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Upload</label>
+								<input class="form-control" type="file" id="gambar"  name="gambar">
+						      </div>
+                            <?php } ?>
+<?php } else { ?>
+    <div class="form-group">
+                              <label>Full Name</label>
+                                  <input class="form-control" placeholder="Name" name="nama" id="nama" type="text" value="" required autofocus>
                               </div>
 
                               <div class="form-group">
@@ -109,6 +161,13 @@ and is wrapped around the whole page content, except for the footer in this exam
                               <label>Allergy</label>
                                   <input class="form-control" placeholder="Allergy" name="allergy" id="allergy" required type="text" value="">
                               </div>
+
+                              <div class="form-group">
+                              <label>Upload</label>
+								<input class="form-control" type="file" id="gambar"  name="gambar" >
+						      </div>
+<?php } ?>
+
                               
                               <div class="form-actions">
                               <input class="btn btn-lg btn-success btn-block"  name="btnsave" type="submit" value="Submit">

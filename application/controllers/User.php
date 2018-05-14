@@ -8,6 +8,7 @@ public function __construct(){
   			$this->load->helper('url');
   	 		$this->load->model('user_model');
         $this->load->library('session');
+        $this->load->library('image_lib');
 
 }
 
@@ -41,7 +42,7 @@ if($email_check){
   }
 }
 
-  //edit view
+  /*edit view
   public function EditView($id){
 
     $result = $this->user_model->getprofil($id);
@@ -51,6 +52,7 @@ if($email_check){
     $data['menu'] = $menu;
     $this->load->view('EditBuku',$data);
   }
+  */
   
 
 //edit data
@@ -66,6 +68,22 @@ public function EditProfil()
     $food = $this->input->post('food');
     $allergy = $this->input->post('allergy');
     $id = $this->session->user_id;
+
+            $config['upload_path']   = './images/picture'; //call path
+            $config['allowed_types'] = 'jpeg|jpg|png';//type file upload
+			
+            $this->load->library('upload', $config);
+			
+            if($this->upload->do_upload('gambar')){ //dari sini akan kebuat keterangan ttg data yg diupload
+				        $data['upload_data'] = $this->upload->data(); //trus keterangannya masuk ke variabel
+
+        foreach ($data['upload_data'] as $item => $value) { //ini ngeloop data yg keupload, kayak file type, file name, blabla, full path, dsb
+					if ($item == 'file_name') { //kita cuma mau ambil file name nya aja beserta format filenya kan?
+						$gambar = $value; //ini dia ngesave file name si gambar berdasarkan data yg keupload
+						break;
+					}
+        }
+
     $user = array(
       'nama' =>$nama,
       'user_name' =>$user_name,
@@ -76,6 +94,7 @@ public function EditProfil()
       'age' =>$age,
       'food' =>$food,
       'allergy' =>$allergy,
+      'picture' =>$gambar
     );
 
         
@@ -86,9 +105,14 @@ public function EditProfil()
         $this->session->set_userdata('user_email',$data['user_email']);
         $this->session->set_userdata('user_name',$data['user_name']);
         $this->session->set_userdata('user_mobile',$data['user_mobile']);
-        $this->session->set_flashdata('success_msg', 'Registered successfully. ');
+        echo "<script>alert('Berhasil Input Produk.')</script>";
         
         redirect('welcome/tampilprofil');
+      }else{
+
+        echo "<script>alert('Fail Input Data.Please try again.')</script>";
+        Redirect('welcome/editprofil');
+    }
 }
 
 public function login_view(){

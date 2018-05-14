@@ -46,9 +46,11 @@ class welcome extends CI_Controller {
 		$nama = $this->session->user_name;
 		$hp = $this->session->user_mobile;
 		$id = $this->session->user_id;
+		$puser = $this->user_model->getuser1($id);
 		$data['user_name']=$nama;
 		$data['user_mobile']=$hp;
 		$data['user_id']=$id;
+		$data['puser'] = $puser;
 		$this->load->view('editprof',$data);
 	}
 
@@ -83,7 +85,9 @@ class welcome extends CI_Controller {
         $this->session->set_userdata('age',$data['age']);
         $this->session->set_userdata('allergy',$data['allergy']);
         $this->session->set_userdata('user_mobile',$data['user_mobile']);
-        $this->session->set_userdata('id_ktp',$data['id_ktp']);
+		$this->session->set_userdata('id_ktp',$data['id_ktp']);
+		$this->session->set_userdata('picture',$data['picture']);
+
         
 		//$data['tampilstatus'] = $allprofil;
 		$this->load->view('tampilprofil',$data);
